@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header @toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask"/>
-    <router-view></router-view>
+    <router-view :showAddTask="showAddTask"></router-view>
     <Footer />
   </div>
   
@@ -24,7 +24,7 @@ export default {
       showAddTask: false
     }
   },
-  method:{
+  methods:{
     toggleAddTask(){
       this.showAddTask = !this.showAddTask
     }
